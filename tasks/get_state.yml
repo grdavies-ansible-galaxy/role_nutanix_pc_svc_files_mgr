@@ -1,0 +1,21 @@
+---
+- name: Get current Files Manager Enablement Status
+  uri:
+    url: "https://{{ nutanix_host }}:{{ nutanix_port }}/api/nutanix/v3/services/nucalm/status"
+    method: GET
+    validate_certs: "{{ validate_certs }}"
+    body_format: json
+    status_code: 200
+    headers:
+      Authorization: "{{ nutanix_api_auth }}"
+  register: nutanix_files_mgr_state
+
+- name: Debug nutanix_files_mgr_state
+  debug:
+    var: nutanix_files_mgr_state
+  when:
+    - nutanix_debug
+
+- name: Current status of Files Manager service(s)
+  debug:
+    msg: "Files Manager is currently in a '{{ nutanix_files_mgr_state.json.service_enablement_status }}' state."

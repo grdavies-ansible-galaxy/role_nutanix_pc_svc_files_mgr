@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - grdavies.role_nutanix_pc_svc_calm
