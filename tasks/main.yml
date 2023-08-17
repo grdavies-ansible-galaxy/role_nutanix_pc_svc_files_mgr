@@ -19,13 +19,13 @@
 #     - nutanix_file_mgr_enable | default(False)
 
 - name: Enable Files Manager
-  ansible.builtin.include_tasks: enable_feature.yml
+  ansible.builtin.include_tasks: enable_service.yml
   when:
     - nutanix_files_mgr_state.service_enablement_status != "ENABLED"
     - nutanix_file_mgr_enable | default(False)
 
 - name: Disable Files Manager
-  ansible.builtin.include_tasks: disable_feature.yml
+  ansible.builtin.include_tasks: disable_service.yml
   when:
     - nutanix_files_mgr_state.service_enablement_status == "ENABLED"
     - nutanix_file_mgr_enable | default(True)
