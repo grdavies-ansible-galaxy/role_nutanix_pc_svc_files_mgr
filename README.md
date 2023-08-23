@@ -2,7 +2,6 @@
 
 This Ansible role manages the Nutanix Files Manager service on Prism Central.
 
-
 ## Role Variables
 
 | Variable                                          | Required | Default | Choices                   | Comments                                                                                               |
@@ -15,15 +14,13 @@ This Ansible role manages the Nutanix Files Manager service on Prism Central.
 | nutanix_debug                                     | no       | no      | true / false              | Whether to output variable contents for debugging purposes.                                            |
 | nutanix_file_mgr_enable                           | yes      |         | true / false              | Set  to 'true' to enable Nutanix Files Manager.                                                        |
 
-
 ## Dependencies
 
 None
 
-
 ## Example Playbook
 
-```
+```YAML
 - hosts: localhost
   gather_facts: false
   roles:
@@ -34,7 +31,6 @@ None
     nutanix_password: nx2Tech283!
     nutanix_file_mgr_enable: true
 ```
-
 
 ## License
 
