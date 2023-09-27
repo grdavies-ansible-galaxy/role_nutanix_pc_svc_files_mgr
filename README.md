@@ -6,17 +6,18 @@ This Ansible role manages the Nutanix Files Manager service on Prism Central.
 
 | Variable                                          | Required | Default | Choices                   | Comments                                                                                               |
 |---------------------------------------------------|----------|---------|---------------------------|--------------------------------------------------------------------------------------------------------|
-| nutanix_host                                      | yes      |         |                           | The IP address or FQDN for the Prism Central where you want to enable the service.                     |
-| nutanix_username                                  | no       | "admin" |                           | A valid username with appropriate rights to access the Nutanix API.                                    |
-| nutanix_password                                  | yes      |         |                           | A valid password for the supplied username.                                                            |
-| nutanix_port                                      | no       | 9440    |                           | The Prism TCP port                                                                                     |
-| validate_certs                                    | no       | no      | true / false              | Whether to check if Prism UI certificates are valid.                                                   |
-| nutanix_debug                                     | no       | no      | true / false              | Whether to output variable contents for debugging purposes.                                            |
-| nutanix_file_mgr_enable                           | yes      |         | true / false              | Set  to 'true' to enable Nutanix Files Manager.                                                        |
+| role_nutanix_pc_svc_files_mgr_host                | yes      |         |                           | The IP address or FQDN for the Prism Central where you want to enable the service.                     |
+| role_nutanix_pc_svc_files_mgr_username            | no       | "admin" |                           | A valid username with appropriate rights to access the Nutanix API.                                    |
+| role_nutanix_pc_svc_files_mgr_password            | yes      |         |                           | A valid password for the supplied username.                                                            |
+| role_nutanix_pc_svc_files_mgr_port                | no       | 9440    |                           | The Prism TCP port                                                                                     |
+| role_nutanix_pc_svc_files_mgr_validate_certs      | no       | false   | true / false              | Whether to check if Prism UI certificates are valid.                                                   |
+| role_nutanix_pc_svc_files_mgr_debug               | no       | false   | true / false              | Whether to output variable contents for debugging purposes.                                            |
+| role_nutanix_pc_svc_files_mgr_enable              | yes      |         | true / false              | Set  to 'true' to enable Nutanix Files Manager.                                                        |
 
 ## Dependencies
 
-None
+- grdavies.role_nutanix_prism_api
+- grdavies.role_nutanix_prism_monitor_task
 
 ## Example Playbook
 
@@ -26,10 +27,10 @@ None
   roles:
     - role: grdavies.role_nutanix_pc_svc_files_mgr
   vars:
-    nutanix_host: 10.38.179.39
-    nutanix_username: admin
-    nutanix_password: nx2Tech283!
-    nutanix_file_mgr_enable: true
+    role_nutanix_pc_svc_files_mgr_host: 10.38.179.39
+    role_nutanix_pc_svc_files_mgr_username: admin
+    role_nutanix_pc_svc_files_mgr_password: nx2Tech283!
+    role_nutanix_pc_svc_files_mgr_enable: true
 ```
 
 ## License
