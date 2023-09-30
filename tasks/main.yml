@@ -6,7 +6,7 @@
   vars:
     role_nutanix_prism_api_host: "{{ role_nutanix_pc_svc_files_mgr_host }}"
     role_nutanix_prism_api_username: "{{ role_nutanix_pc_svc_files_mgr_username }}"
-    role_nutanix_prism_api_password: "{{ role_nutanix_pc_svc_files_mgr_password | default(omit) }}"
+    role_nutanix_prism_api_password: "{{ role_nutanix_pc_svc_files_mgr_password }}"
     role_nutanix_prism_api_port: "{{ role_nutanix_pc_svc_files_mgr_port | default(omit) }}"
     role_nutanix_prism_api_validate_certs: "{{ role_nutanix_pc_svc_files_mgr_validate_certs | default(omit) }}"
     role_nutanix_prism_api_debug: "{{ role_nutanix_pc_svc_files_mgr_debug | default(omit) }}"
