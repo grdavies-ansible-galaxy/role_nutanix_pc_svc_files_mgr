@@ -1,10 +1,10 @@
 ---
 # defaults file for nutanix_role_prism_calm
 role_nutanix_pc_svc_files_mgr_host: ""
-role_nutanix_pc_svc_files_mgr_username: ""
-role_nutanix_pc_svc_files_mgr_password: ""
-role_nutanix_pc_svc_files_mgr_port: 9440
-role_nutanix_pc_svc_files_mgr_validate_certs: false
+role_nutanix_pc_svc_files_mgr_host_username: ""
+role_nutanix_pc_svc_files_mgr_host_password: ""
+role_nutanix_pc_svc_files_mgr_host_port: 9440
+role_nutanix_pc_svc_files_mgr_host_validate_certs: false
 role_nutanix_pc_svc_files_mgr_debug: false
 
 nutanix_calm_enable_default_apps: false
