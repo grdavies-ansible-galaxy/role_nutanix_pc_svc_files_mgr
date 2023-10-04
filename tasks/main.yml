@@ -23,13 +23,13 @@
 # - name: Check Files Manager Pre-Reqs
 #   include_tasks: check_prereqs.yml
 #   when:
-#     - role_nutanix_pc_svc_files_mgr_state.service_enablement_status != "ENABLED"
+#     - role_nutanix_pc_svc_files_mgr_state.json.service_enablement_status | lower == "enabled"
 #     - role_nutanix_pc_svc_files_mgr_enable | default(False)
 
 - name: Enable Files Manager
   ansible.builtin.include_tasks: enable_service.yml
   when:
-    - role_nutanix_pc_svc_files_mgr_state.service_enablement_status | lower != "enabled"
+    - role_nutanix_pc_svc_files_mgr_state.json.service_enablement_status | lower != "enabled"
     - role_nutanix_pc_svc_files_mgr_enable | default(False)
 
 - name: Disable Files Manager
